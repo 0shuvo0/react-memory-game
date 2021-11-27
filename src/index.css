@@ -2,39 +2,39 @@
   margin: 0;
   padding: 0;
 }
-
 html, body{
   height: 100%;
 }
 body{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: #fae19d;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
+
 h1{
   text-align: center;
+  margin-bottom: 1em;
 }
 .container{
-  margin-top: 2em;
-  width: 700px;
   height: 700px;
+  width: 700px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-gap: 1em;
+  gap: 1em;
 }
+
 .card{
   background-color: #fff;
-  border-radius: 0.5em;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.5s;
+  border-radius: 5px;
   transform: rotateY(180deg);
-  animation: hideCard 3s;
+  animation: 2s hideCard linear;
+  transition: transform 0.5s;
 }
 @keyframes hideCard{
   0%, 70%{
@@ -45,13 +45,13 @@ h1{
   }
 }
 .card img{
-  max-height: 60%;
   max-width: 80%;
+  max-height: 80%;
   transition: transform 0.5s;
   transform: scale(0);
-  animation: hideImg 3s;
+  animation: 2s hideImage linear;
 }
-@keyframes hideImg{
+@keyframes hideImage{
   0%, 70%{
     transform: scale(1);
   }
@@ -61,14 +61,14 @@ h1{
 }
 
 .card.active{
-  transform: rotateY(0deg);
+  transform: rotateY(0);
+}
+.card.correct{
+  background-color: #65e469;
+}
+.card.wrong{
+  background-color: #fd245a;
 }
 .card.active img{
   transform: scale(1);
-}
-.card.correct{
-  background-color: #70e974;
-}
-.card.wrong{
-  background-color: #fc7c73;
 }

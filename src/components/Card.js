@@ -1,11 +1,11 @@
-function Crad({item, itemId, handleClick}){
-    const cardClass = item.stat ? " active " + item.stat : ""
-    
+function Card({item, id, handleClick}){
+    const itemClass = item.stat ? " active " + item.stat : ""
+
     return (
-        <div onClick={() => handleClick(itemId)} className={ "card" + cardClass}>
-            <img src={item.img} alt=""/>
+        <div className={"card" + itemClass} onClick={() => handleClick(id)}>
+            <img src={item.img} alt="" />
         </div>
     )
 }
 
-export default Crad
+export default Card

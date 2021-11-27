@@ -6,7 +6,7 @@ function App() {
       <h1>Memory Game - React</h1>
       <Cards />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
